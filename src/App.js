@@ -5,8 +5,7 @@ import ReduxThunk from 'redux-thunk';
 import logger from 'redux-logger';
 import firebase from 'firebase';
 import reducers from './reducers';
-
-import LoginForm from './components/LoginForm';
+import Router from './Router';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger())(createStore);
 
@@ -26,7 +25,7 @@ class App extends Component {
 	render() {
 		return (
 			<Provider store={createStoreWithMiddleware(reducers)}>
-				<LoginForm />
+				<Router />
 			</Provider>
 		);
 	}
